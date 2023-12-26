@@ -14,7 +14,12 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
 	const { thumbnailUrl, duration, genre, releasedDate, createdAt, id } = data;
 	const createdAtYear = new Date(createdAt).getFullYear();
 	return (
-		<div className='group bg-zinc-900 col-span-1 relative'>
+		<div
+			className='group bg-zinc-900 col-span-1 relative'
+			onClick={() => {
+				router.push(`/watch/${id}`);
+			}}
+		>
 			<div className='aspect-w-16 aspect-h-9'>
 				<img
 					className='
